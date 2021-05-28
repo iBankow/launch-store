@@ -1,0 +1,56 @@
+<header>
+
+    <div class="container">
+        <a href="http:/">
+            <div class="logo">
+                <h1>Launchstore</h1>
+                <h2>COMPRA E VENDA</h2>
+            </div>
+        </a>
+
+        <form class="search" action="/products/search" method="get">
+            <input type="text"
+                name="filter"
+                placeholder="Buscar por Produtos"
+                {% if search.term%}
+                    value="{{search.term}}"
+                {%endif%}
+            >
+        </form>
+    
+        <nav class="primary">
+            <ul>
+                <li>
+                    <a href="/ads/create">
+                        <i class="material-icons">add</i>
+                        Novo Anuncio
+                    </a>
+                </li>
+                <li class="accounts">
+                    <a href="/accounts">
+                        <i class="material-icons">account_circle</i>
+                        Minha Conta
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="/users">Configuracoes</a>
+                        </li>
+                        <li>
+                            <a href="/buying">Meus pedidos</a>
+                        </li>
+                        <li>
+                            <a href="/selling">Minhas vendas</a>
+                        </li>
+                        <li>
+                            <form href="/users/logout" method="POST">
+                                <button>Sair</button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+
+</header>
